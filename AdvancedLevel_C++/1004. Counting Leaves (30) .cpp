@@ -3,14 +3,14 @@
 #include <algorithm>
 using namespace std;
 vector<int> v[100];
-int book[100], maxdepth = -1;
+int book[100], maxdepth = -1;//book：每层叶子数
 void dfs(int index, int depth) {
-    if(v[index].size() == 0) {
+    if(v[index].size() == 0) {//如果找到一个叶子，该层叶子数加一
         book[depth]++;
-        maxdepth = max(maxdepth, depth);
+        maxdepth = max(maxdepth, depth);//maxdepth：树的深度，比较每个叶子的深度得出树的深度
         return ;
     }
-    for(int i = 0; i < v[index].size(); i++)
+    for(int i = 0; i < v[index].size(); i++)//深度递归遍历儿子
         dfs(v[index][i], depth + 1);
 }
 int main() {
