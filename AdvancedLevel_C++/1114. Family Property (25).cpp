@@ -3,15 +3,15 @@
 using namespace std;
 struct DATA {
     int id, fid, mid, num, area;
-    int cid[10];
+    int cid[10];//儿子
 }data[1005];
 struct node {
     int id, people;
     double num, area;
-    bool flag = false;
+    bool flag = false;//统计家庭数，检验某家庭是否存在
 }ans[10000];
 int father[10000];
-bool visit[10000];
+bool visit[10000];//统计家庭人数
 int find(int x) {
     while(x != father[x])
         x = father[x];
