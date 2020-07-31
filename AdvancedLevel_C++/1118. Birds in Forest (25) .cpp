@@ -27,7 +27,7 @@ int main() {
     int id, temp;
     for(int i = 0; i < n; i++) {
         scanf("%d%d", &k, &id);
-        exist[id] = true;
+        exist[id] = true;//一张图出现的第一只鸟作为一张图内鸟合并的一元，简化时间复杂度（否则排列次）
         for(int j = 0; j < k-1; j++) {
             scanf("%d", &temp);
             Union(id, temp);
