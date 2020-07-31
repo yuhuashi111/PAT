@@ -2,7 +2,7 @@
 #include <algorithm>
 using namespace std;
 struct DATA {
-    int id, fid, mid, num, area;
+    int id, fid, mid, num, area;//中年人作根
     int cid[10];//儿子
 }data[1005];
 struct node {
@@ -23,7 +23,7 @@ void Union(int a, int b) {
     if(faA > faB)
         father[faA] = faB;
     else if(faA < faB)
-        father[faB] = faA;
+        father[faB] = faA;//家庭用最小id来标记
 }
 int cmp1(node a, node b) {
     if(a.area != b.area)
