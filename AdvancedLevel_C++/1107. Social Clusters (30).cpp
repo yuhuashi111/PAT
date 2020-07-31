@@ -34,7 +34,7 @@ int main() {
             scanf("%d", &t);
             if(course[t] == 0)
                 course[t] = i;
-            Union(i, findFather(course[t]));
+            Union(i, course[t]);
         }
     }
     for(int i = 1; i <= n; i++)
